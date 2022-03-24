@@ -105,3 +105,12 @@ a {
 #design-by {
     color: #fff;
 }
+
+.price {
+    display: inline;
+    float: right;
+}
+
+#Uni {
+    color: #ffc0cb;
+}
