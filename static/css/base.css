@@ -124,3 +124,7 @@ a:hover {
 	font-family: 'Pacifico';
 	font-size: 22px;
 }
+
+#shipping-info p {
+	color: #6857dd;
+}
