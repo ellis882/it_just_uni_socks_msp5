@@ -1,6 +1,6 @@
 
 body {
-	background-color: hsl(0, 0%, 98%); 	   
+	background-color: hsl(0, 0%, 98%);	 	   
 }
 
 html {
@@ -28,7 +28,7 @@ html {
 }
 
 h1,h2,h3,h4,h5,h6 {
-	color: #6857dd;
+	color: #767676;
 }
 
 #logo {
@@ -36,17 +36,18 @@ h1,h2,h3,h4,h5,h6 {
 	font-size: 22px;	
 }
 
-#Uni {
-    color: #6857dd;
+#Uni, span {
+    color: #e60023;
 }
 
 .navbar-brand {
 	font-family: 'Pacifico', sans-serif;
 	font-size: 22px;
+	
 }
 
 .bg-dark {	
-	background-color: #0f093f!important;	
+	background-color: #efefef!important;	
 }
 
 .box-element {
@@ -77,8 +78,8 @@ h1,h2,h3,h4,h5,h6 {
 #cart-total {
 	display: block;
 	text-align: center;
-	color:#fff;
-	background-color: #6857dd;
+	color:#111;
+	background-color: #efefef;
 	width: 20px;
 	height: 25px;
 	border-radius: 50%;
@@ -134,21 +135,30 @@ h1,h2,h3,h4,h5,h6 {
 	display: none!important;
 }
 
+p {
+	color: #111;
+}
+
 a {
-    color: #6857dd;
+    color: #111;
 }
 
 a:hover {
-	color: #b8b5ff;
+	color: #e60023;
 }
 
 .price {
     display: inline;
     float: right;
+	color: #111;
 }
 
 #shipping-info p {
-	color: #6857dd;
+	color: #111;
+}
+
+strong {
+	color: #111;
 }
 
 /* footer */
@@ -161,15 +171,14 @@ footer {
 	left: 50%;
 }
 
-
 /* contact page */
 
 .contact {
-	color: #0f093f;
+	color: #e60023;
 }
 
 .social-contact {
-	color: #0f093f;
+	color: #e60023;
 	font-size: 22px;
 	width: 30px;
 }
