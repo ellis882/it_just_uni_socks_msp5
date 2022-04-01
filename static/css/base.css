@@ -8,9 +8,13 @@ html {
 
 }
 
+.landing-img {
+	margin-top: -40px;
+}
+
 #landing-page {
-	background: url('../images/landing-page-uni-socks.jpg');
-	height: 400px;
+	background: url('../images/socks-landing-page.jpg');
+	height: 500px;
 	background-position: center;
   	background-repeat: no-repeat;
   	background-size: cover;
@@ -149,20 +153,14 @@ a:hover {
 
 /* footer */
 
-#design-by {
-    color: #fff;
+footer {
+	width: 100vw;
+	position: relative;
+	margin-left: -50vw;
+	margin-top: 0;
+	left: 50%;
 }
 
-.footer{
-	height: 100px;
-	position: fixed;
-	left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #0f093f;
-    color: #6857dd;
-    text-align: center;	
-}
 
 /* contact page */
 
