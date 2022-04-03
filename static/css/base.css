@@ -182,3 +182,12 @@ footer {
 	font-size: 22px;
 	width: 30px;
 }
+
+/* mailchimp nemwsletter */
+#mc_embed_signup {
+	color: #111;
+	background:#fff; 
+	clear:left; 
+	font:14px Lato,sans-serif;  
+	width:300px;
+}
