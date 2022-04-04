@@ -57,7 +57,16 @@
                     </li>
                 </ul>
                 <div class="form-inline my-2 my-lg-0 ml-auto">
-                    <a href="#" class="btn btn-danger">Login</a>
+                  {% if request.user.is_authenticated %}
+                      {% if request.user.is_superuser %}
+                        <a href="" class="btn btn-danger">Product Management</a>
+                      {% endif %}
+                      <a href="" class="btn btn-danger">My Profile</a>
+                      <a href="{% url 'account_logout' %}" class="btn btn-secondary">Logout</a>
+                  {% else %}
+                  <a href="{% url 'account_signup' %}" class="btn btn-secondary">Register</a>
+                  <a href="{% url 'account_login' %}" class="btn btn-danger">Login</a>
+              {% endif %}                  
 
                     <a href="{% url 'cart' %}">
                         <img id="cart-icon" src="{% static 'images/cart1.png' %}">
@@ -91,13 +100,13 @@
             </div>      
             
             <div>
-              <a href="" class="text-white me-4">
+              <a href="" class="text-white mx-3">
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a href="" class="text-white me-4">
+              <a href="" class="text-white mx-3">
                 <i class="fab fa-twitter"></i>
               </a>              
-              <a href="" class="text-white me-4">
+              <a href="" class="text-white mx-3">
                 <i class="fab fa-instagram"></i>
               </a>              
             </div>            
