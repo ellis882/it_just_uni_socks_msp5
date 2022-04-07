@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Product
+from .models import Product, Customer, Order, OrderItem
 
 # Create your views here.
 
@@ -14,7 +14,16 @@ def shop(request):
 
 def cart(request):
     """ A view to return the cart page"""
-    context = {}
+
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created = Order.objects.get_or_create(customer=customer,
+                                                     complete=False)
+        items = order.orderitem_set.all()
+    else:
+        items = []
+
+    context = {'items': items}
     return render(request, 'shop/cart.html', context)
 
 
