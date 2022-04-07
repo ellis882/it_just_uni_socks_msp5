@@ -59,7 +59,7 @@
                 <div class="form-inline my-2 my-lg-0 ml-auto">
                   {% if request.user.is_authenticated %}
                       {% if request.user.is_superuser %}
-                        <a href="" class="btn btn-danger">Product Management</a>
+                        <a href="" class="btn btn-secondary">Product Management</a>
                       {% endif %}
                       <a href="" class="btn btn-danger">My Profile</a>
                       <a href="{% url 'account_logout' %}" class="btn btn-secondary">Logout</a>
