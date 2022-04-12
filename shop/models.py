@@ -55,7 +55,7 @@ class Order(models.Model):
         for i in orderitems:
             if i.product.digital == False:
                 shipping = True
-        return shipping   
+        return shipping
 
     @property
     def get_cart_total(self):

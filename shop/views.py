@@ -1,9 +1,9 @@
+import datetime
+import json
 from django.shortcuts import render
 from django.http import JsonResponse
-import json
-import datetime
 
-from .models import Product, Customer, Order, OrderItem, ShippingAddress
+from .models import Product, Order, OrderItem, ShippingAddress
 
 # Create your views here.
 
@@ -81,7 +81,7 @@ def updateItem(request):
     order, created = Order.objects.get_or_create(customer=customer,
                                                  complete=False)
 
-    orderItem, created = OrderItem.objects.get_or_create(order=order, 
+    orderItem, created = OrderItem.objects.get_or_create(order=order,
                                                          product=product)
 
     if action == 'add':
@@ -96,9 +96,7 @@ def updateItem(request):
 
     return JsonResponse('Item was added', safe=False)
 
-#from django.views.decorators.csrf import csrf_exempt
 
-#@csrf_exempt
 def processOrder(request):
     transaction_id = datetime.datetime.now().timestamp()
     data = json.loads(request.body)
@@ -106,7 +104,7 @@ def processOrder(request):
     if request.user.is_authenticated:
         customer = request.user.customer
         order, created = Order.objects.get_or_create(customer=customer,
-                                                 complete=False)
+                                                     complete=False)
         total = float(data['form']['total'])
         order.transaction_id = transaction_id
 
@@ -114,7 +112,7 @@ def processOrder(request):
             order.complete = True
         order.save()
 
-        if order.shipping == True:
+        if order.shipping is True:
             ShippingAddress.objects.create(
                 customer=customer,
                 order=order,
@@ -125,5 +123,5 @@ def processOrder(request):
             )
 
     else:
-        print('User is not logged in..')    
+        print('User is not logged in..')
     return JsonResponse('Payment complete', safe=False)
