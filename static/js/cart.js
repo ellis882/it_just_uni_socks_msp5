@@ -1,4 +1,4 @@
-
+console.log('Hello')
 var updateBtns = document.getElementsByClassName('update-cart')
 
 
